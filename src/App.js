@@ -149,7 +149,7 @@ render(){
    const {isSignedIn, imgUrl,box,route} = this.state;
   return (
     <div className="App">
-   <ParticlesBg type="circle" bg={true} className="particles"/>
+   <ParticlesBg type="circle" className="particles-bg-canvas-self"/>
     <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
       { route==='home' 
        ? <div>
