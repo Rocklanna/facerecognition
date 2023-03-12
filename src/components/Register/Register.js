@@ -25,7 +25,7 @@ class Register extends React.Component{
 
 
 	 onSubmitRegister = ()=>{
-	  	fetch('http://localhost:3001/register',{
+	  	fetch('https://facerec-api.onrender.com/register',{
 	  		method:'post',
 	  		headers:{'Content-Type':'application/json'},
 	  		body: JSON.stringify({

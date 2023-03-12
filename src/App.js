@@ -50,7 +50,7 @@ constructor(){
 
 
 componentDidMount(){
-    fetch('http://localhost:3001/')
+    fetch('https://facerec-api.onrender.com/')
         .then(response=>response.json())
         .then(data=>console.log(data))
 }
@@ -113,7 +113,7 @@ onRouteChange =(route)=>{
 onButtonSubmit =()=>{
    this.setState({imgUrl:this.state.input})
 
-   fetch("http://localhost:3001/image",{
+   fetch("https://facerec-api.onrender.com/image",{
                     method:'post',
                     headers:{'Content-Type':'application/json'},
                     body:JSON.stringify({
@@ -123,7 +123,7 @@ onButtonSubmit =()=>{
     .then(response => response.json())  
     .then((result)=>{
                if(result){
-                fetch("http://localhost:3001/image",{
+                fetch("https://facerec-api.onrender.com/image",{
                     method:'put',
                     headers:{'Content-Type':'application/json'},
                     body:JSON.stringify({
