@@ -7,56 +7,10 @@ import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 import { useCallback } from "react";
+import ParticlesBg from 'particles-bg'
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import './App.css';
-
-
-const particlesOptions ={
-                  particles: {
-                    color: {
-                        value: "#000",
-                    },
-                    links: {
-                        color: "#000",
-                        distance: 150,
-                        enable: true,
-                        opacity: 0,
-                        width: 1,
-                    },
-                    collisions: {
-                        enable: true,
-                    },
-                    move: {
-                        directions: "none",
-                        enable: true,
-                        outModes: {
-                            default: "bounce",
-                        },
-                        random: false,
-                        speed: 6,
-                        straight: false,
-                    },
-                    number: {
-                        density: {
-                            enable: true,
-                            area: 800,
-                        },
-                        value: 300,
-                    },
-                    opacity: {
-                        value: 0,
-                    },
-                    shape: {
-                        type: "circle",
-                    },
-                    size: {
-                        value: { min: 1, max: 5 },
-                    },
-                },
-                detectRetina: true,
-           
-}
 
 
 const intialState = {
@@ -93,6 +47,7 @@ constructor(){
     }
   }
 }
+
 
 componentDidMount(){
     fetch('http://localhost:3001/')
@@ -194,8 +149,8 @@ render(){
    const {isSignedIn, imgUrl,box,route} = this.state;
   return (
     <div className="App">
-    {/*<Particles className="particles" id="tsparticles" url="http://foo.bar/particles.json" init={particlesInit} loaded={particlesLoaded} options={particlesOptions} />*/}
-      <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
+   <ParticlesBg type="circle" bg={true} className="particles"/>
+    <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
       { route==='home' 
        ? <div>
             <Logo />
